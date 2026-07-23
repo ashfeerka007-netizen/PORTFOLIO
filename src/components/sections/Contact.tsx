@@ -90,8 +90,8 @@ export default function Contact() {
       <div className="grid lg:grid-cols-5 gap-10 max-w-5xl">
         {/* Contact Info */}
         <div className="lg:col-span-2 space-y-5">
-          <h3 className="text-lg font-bold text-white">Contact Information</h3>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">Contact Information</h3>
+          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
             Whether you need a custom management system, want to discuss a project, or just want to connect — feel free to reach out.
           </p>
 
@@ -106,11 +106,11 @@ export default function Contact() {
                 id={`contact-${label.toLowerCase()}`}
               >
                 <div className="w-9 h-9 rounded-xl bg-blue-600/15 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600/25 transition-colors">
-                  <Icon size={16} className="text-blue-400" />
+                  <Icon size={16} className="text-blue-500 dark:text-blue-400" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500">{label}</div>
-                  <div className="text-sm text-slate-300 group-hover:text-white transition-colors truncate max-w-[180px]">{value}</div>
+                  <div className="text-xs text-slate-500 dark:text-slate-400">{label}</div>
+                  <div className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-white transition-colors truncate max-w-[180px]">{value}</div>
                 </div>
               </a>
             ))}
@@ -125,7 +125,7 @@ export default function Contact() {
           className="lg:col-span-3"
         >
           <div className="card p-6">
-            <h3 className="text-lg font-bold text-white mb-5">Send a Message</h3>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-5">Send a Message</h3>
 
             {status === 'success' ? (
               <motion.div
@@ -134,17 +134,17 @@ export default function Contact() {
                 className="flex flex-col items-center gap-4 py-10 text-center"
               >
                 <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center">
-                  <CheckCircle size={32} className="text-green-400" />
+                  <CheckCircle size={32} className="text-green-500 dark:text-green-400" />
                 </div>
-                <h4 className="text-white font-bold">Message Sent!</h4>
-                <p className="text-slate-400 text-sm">Thanks for reaching out. I'll get back to you soon.</p>
+                <h4 className="text-gray-900 dark:text-white font-bold">Message Sent!</h4>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Thanks for reaching out. I'll get back to you soon.</p>
                 <button onClick={() => setStatus('idle')} className="btn-ghost text-sm">Send another →</button>
               </motion.div>
             ) : (
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-4" id="contact-form">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1.5" htmlFor="contact-name">
+                    <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5" htmlFor="contact-name">
                       Full Name *
                     </label>
                     <input
@@ -154,12 +154,12 @@ export default function Contact() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-800/60 border text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${errors.name ? 'border-red-500/50' : 'border-slate-700/60 hover:border-slate-600'}`}
+                      className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-800/60 border text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${errors.name ? 'border-red-500/50' : 'border-slate-300 dark:border-slate-700/60 hover:border-slate-400 dark:hover:border-slate-600'}`}
                     />
-                    {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
+                    {errors.name && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{errors.name}</p>}
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1.5" htmlFor="contact-email">
+                    <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5" htmlFor="contact-email">
                       Email Address *
                     </label>
                     <input
@@ -169,14 +169,14 @@ export default function Contact() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="you@example.com"
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-800/60 border text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${errors.email ? 'border-red-500/50' : 'border-slate-700/60 hover:border-slate-600'}`}
+                      className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-800/60 border text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${errors.email ? 'border-red-500/50' : 'border-slate-300 dark:border-slate-700/60 hover:border-slate-400 dark:hover:border-slate-600'}`}
                     />
-                    {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+                    {errors.email && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{errors.email}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1.5" htmlFor="contact-subject">
+                  <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5" htmlFor="contact-subject">
                     Subject *
                   </label>
                   <input
@@ -186,13 +186,13 @@ export default function Contact() {
                     value={form.subject}
                     onChange={handleChange}
                     placeholder="What's this about?"
-                    className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-800/60 border text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${errors.subject ? 'border-red-500/50' : 'border-slate-700/60 hover:border-slate-600'}`}
+                    className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-800/60 border text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all ${errors.subject ? 'border-red-500/50' : 'border-slate-300 dark:border-slate-700/60 hover:border-slate-400 dark:hover:border-slate-600'}`}
                   />
-                  {errors.subject && <p className="text-red-400 text-xs mt-1">{errors.subject}</p>}
+                  {errors.subject && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{errors.subject}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-400 mb-1.5" htmlFor="contact-message">
+                  <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5" htmlFor="contact-message">
                     Message *
                   </label>
                   <textarea
@@ -202,13 +202,13 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell me about your project or how I can help..."
-                    className={`w-full px-3.5 py-2.5 rounded-xl bg-slate-800/60 border text-white text-sm placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none ${errors.message ? 'border-red-500/50' : 'border-slate-700/60 hover:border-slate-600'}`}
+                    className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-800/60 border text-slate-900 dark:text-white text-sm placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all resize-none ${errors.message ? 'border-red-500/50' : 'border-slate-300 dark:border-slate-700/60 hover:border-slate-400 dark:hover:border-slate-600'}`}
                   />
-                  {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
+                  {errors.message && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{errors.message}</p>}
                 </div>
 
                 {status === 'error' && (
-                  <div className="flex items-center gap-2 text-red-400 text-sm p-3 rounded-lg bg-red-900/20 border border-red-500/20">
+                  <div className="flex items-center gap-2 text-red-500 dark:text-red-400 text-sm p-3 rounded-lg bg-red-100 dark:bg-red-900/20 border border-red-500/20">
                     <AlertCircle size={15} />
                     Failed to send message. Please try emailing directly.
                   </div>
@@ -234,3 +234,4 @@ export default function Contact() {
     </SectionWrapper>
   );
 }
+
