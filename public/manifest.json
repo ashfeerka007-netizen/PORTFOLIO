@@ -1,0 +1,18 @@
+{
+  "name": "Ashfeer K A — Portfolio",
+  "short_name": "Ashfeer",
+  "description": "Portfolio of Ashfeer K A — Administrative Professional & Software Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#2563EB",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
